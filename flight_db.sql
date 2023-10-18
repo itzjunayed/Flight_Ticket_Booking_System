@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2023 at 05:05 PM
+-- Generation Time: Oct 18, 2023 at 07:05 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -37,9 +37,7 @@ CREATE TABLE `airlines_list` (
 --
 
 INSERT INTO `airlines_list` (`airline_id`, `airlines`) VALUES
-(1, 'Dhaka Airway'),
 (2, 'CTG AIRWAY'),
-(3, 'Sadid Airline\'s'),
 (4, 'Noakhali Mahfuz'),
 (5, 'Feni Sohan');
 
@@ -60,7 +58,7 @@ CREATE TABLE `airport_list` (
 --
 
 INSERT INTO `airport_list` (`airport_id`, `airport_name`, `location`) VALUES
-(2, 'CTG', 'CTG'),
+(2, 'CTG', 'Chittagong'),
 (3, 'Dhaka', 'Dhaka'),
 (4, 'Test', 'Test'),
 (5, 'Feni', 'Feni'),
@@ -80,6 +78,16 @@ CREATE TABLE `booked_flight` (
   `passport` varchar(255) NOT NULL,
   `contact` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `booked_flight`
+--
+
+INSERT INTO `booked_flight` (`booked_flight_id`, `flight_id`, `name`, `address`, `passport`, `contact`) VALUES
+(3, 1, 'Md. Shakib Shahariar Junayed', '342/6, West Jurain, Khondokar Mahtab Uddin Road, Shympur', '1211', '+8801934469404'),
+(4, 1, 'Md. Shakib Shahariar Junayed', '342/6, West Jurain, Khondokar Mahtab Uddin Road, Shympur', '1211', '+8801934469404'),
+(5, 1, 'Md. Shakib Shahariar Junayed', '342/6, West Jurain, Khondokar Mahtab Uddin Road, Shympur', '1211', '+8801934469404'),
+(6, 4, 'Shakib', 'Dhaka', '12313123', '01234567890');
 
 -- --------------------------------------------------------
 
@@ -123,9 +131,9 @@ CREATE TABLE `flight_list` (
 --
 
 INSERT INTO `flight_list` (`flight_id`, `airline_id`, `plane_no`, `departure_airport_id`, `arrival_airport_id`, `departure_datetime`, `arrival_datetime`, `seats`, `price`) VALUES
-(1, 2, '1012 ', 2, 3, '2023-09-19 20:56:31', '2023-09-20 00:00:00', 50, 100),
-(2, 1, '1011', 2, 3, '2023-09-30 18:48:00', '2023-10-01 06:48:00', 10, 100),
-(3, 3, '420', 5, 6, '2023-10-05 21:02:00', '2023-10-06 21:03:00', 2, 10);
+(1, 2, '1012 ', 2, 3, '2023-10-11 20:56:31', '2023-10-12 00:00:00', 50, 100),
+(4, 5, '420', 5, 6, '2023-10-20 21:30:00', '2023-10-21 21:30:00', 10, 150),
+(5, 5, '111', 5, 6, '2023-10-11 21:30:00', '2023-10-12 21:30:00', 10, 100);
 
 -- --------------------------------------------------------
 
@@ -218,13 +226,13 @@ ALTER TABLE `airport_list`
 -- AUTO_INCREMENT for table `booked_flight`
 --
 ALTER TABLE `booked_flight`
-  MODIFY `booked_flight_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `booked_flight_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `flight_list`
 --
 ALTER TABLE `flight_list`
-  MODIFY `flight_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `flight_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
